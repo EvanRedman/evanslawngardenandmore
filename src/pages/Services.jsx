@@ -1,6 +1,7 @@
 import maintananceImage from "../assets/mowing.jpg";
 import pruningImage from "../assets/tree_pruning.jpg";
 import makeoverImage from "../assets/makeover.jpg";
+import fallImage from "../assets/fall.jpg";
 
 import {
   Phone,
@@ -22,7 +23,7 @@ function Services() {
     const SERVICES = [
     {
         icon: Leaf,
-        title: "Maintenance",
+        title: "Lawn Care",
         summary:
         "Regular mowing, trimming, and seasonal care to keep your yard looking sharp week after week.",
         img: maintananceImage,
@@ -30,42 +31,47 @@ function Services() {
     },
     {
         icon: Shovel,
-        title: "Yard Makeover",
+        title: "Seasonal Cleanups",
         summary:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus.",
-        img: makeoverImage,
+        img: fallImage,
         alt: "Landscaper hauling yard debris in a wheelbarrow during a yard makeover",
     },
     {
         icon: Scissors,
-        title: "Tree Pruning",
+        title: "Wall, Windows, and Roof",
         summary:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus.",
         img: pruningImage,
         alt: "Manicured lawn with tidy flower beds and mature trees",
     },
-    
+    {
+        icon: Scissors,
+        title: "Hauling and Removal",
+        summary:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus.",
+        img: pruningImage,
+        alt: "Manicured lawn with tidy flower beds and mature trees",
+    },
+
     ];
 
   return (
     <section className="py-20 sm:py-24 bg-[#f8f5f0] dark:bg-[#0f1a14]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-14 text-center">
-          <span className="text-green-700 dark:text-green-400 text-xs tracking-[0.18em] uppercase font-semibold">
-            Our Services
-          </span>
           <h2
             className="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-50 mt-2"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
-            Click to Learn More
+            Click to learn about our services
           </h2>
           {/*<p className="text-stone-500 dark:text-stone-400 mt-3 max-w-md mx-auto text-base">
             See the services that we offer.
           </p>*/}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
           {SERVICES.map(({ icon: Icon, title, summary, img, alt }) => (
             <div
               key={title}

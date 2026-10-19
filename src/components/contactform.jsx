@@ -91,7 +91,7 @@ export default function ContactForm() {
           >
             Let's Get in Touch About
             <br />
-            <span className="text-green-700 dark:text-green-400">
+            <span className="text-[var(--secondarygreen)] dark:text-green-400">
               Your Yard.
             </span>
           </h1>
@@ -107,7 +107,7 @@ export default function ContactForm() {
           <div className="bg-white dark:bg-[#111d10] rounded-2xl sm:rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm overflow-hidden">
 
             {/* Green accent strip */}
-            <div className="h-1.5 bg-gradient-to-r from-green-800 via-green-600 to-lime-500" />
+            <div className="h-1.5 bg-gradient-to-r from-[var(--maingreen)] via-green-600 to-[var(--secondarygreen)]" />
 
             <div className="p-6 sm:p-10">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -196,7 +196,7 @@ export default function ContactForm() {
                   type="submit"
                   disabled={loading}
                   className="w-full inline-flex items-center justify-center gap-2
-                    bg-green-700 hover:bg-green-600
+                    bg-[var(--secondarygreen)] hover:bg-green-600
                     disabled:opacity-60 disabled:cursor-not-allowed
                     text-white font-semibold px-6 py-4 rounded-xl
                     transition-all duration-200

@@ -49,37 +49,27 @@ function Home() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 w-full">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-1.5 text-green-300 text-xs tracking-[0.18em] uppercase font-medium mb-6">
-            <Leaf className="w-3.5 h-3.5" /> Evan's Lawn, Garden, and More
-          </span>
           <h1
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6"
-            style={{ fontFamily: "'Fraunces', serif", fontOpticalSizing: "auto" }}
+            style={{ fontFamily: "'var(--heading)', serif", fontOpticalSizing: "auto" }}
           >
-            Affordable Local 
+            Sustainable Local 
             Care for&nbsp;Yards
           </h1>
           <p
             className="text-stone-300 text-lg sm:text-xl mb-9 leading-relaxed max-w-lg"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            style={{ fontFamily: "'var(--sans)', sans-serif" }}
           >
-            Avaible to work on outdoor spaces across the community, from weekly trims to yard makeovers.
+            Available to work on outdoor spaces across the community, from weekly trims to yard makeovers.
           </p>
           <div className="flex flex-wrap gap-3">
             <button
               onClick={() => navigate("/contact")}
-              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors text-sm"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="inline-flex items-center gap-2 bg-[var(--secondarygreen)] hover:bg-[var(--hovergreen)] text-white font-semibold px-6 py-3.5 rounded-xl transition-colors text-sm"
+              style={{ fontFamily: "'var(--sans)', sans-serif" }}
             >
               Contact us <ChevronRight className="w-4 h-4" />
             </button>
-            <a
-              href="tel:1234567890"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/25 transition-colors text-sm backdrop-blur-sm"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-            >
-              <Phone className="w-4 h-4" /> (123) 456-7890
-            </a>
           </div>
         </div>
       </div>
@@ -88,12 +78,9 @@ function Home() {
     <section className="py-20 sm:py-24 bg-white dark:bg-[#0a1209]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-14 text-center">
-          <span className="text-green-700 dark:text-green-400 text-xs tracking-[0.18em] uppercase font-semibold">
-            Results
-          </span>
           <h2
-            className="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-50 mt-2"
-            style={{ fontFamily: "'Fraunces', serif" }}
+            className="text-4xl sm:text-5xl font-bold text-black dark:text-stone-50 mt-2"
+            style={{ fontFamily: "'var(--heading)', serif" }}
           >
             Before and After
           </h2>
@@ -115,7 +102,7 @@ function Home() {
                 </div>
                 <div className="relative rounded-2xl overflow-hidden bg-green-200 dark:bg-green-950 aspect-[4/3]">
                   <img src={after} alt={`After: ${label}`} className="w-full h-full object-cover" />
-                  <span className="absolute top-2.5 left-2.5 bg-green-700/85 text-white text-xs font-bold px-3 py-1 rounded-lg backdrop-blur-sm tracking-wide">
+                  <span className="absolute top-2.5 left-2.5 bg-[var(--secondarygreen)] text-white text-xs font-bold px-3 py-1 rounded-lg backdrop-blur-sm tracking-wide">
                     After
                   </span>
                 </div>
