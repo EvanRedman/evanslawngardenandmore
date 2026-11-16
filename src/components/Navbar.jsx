@@ -50,7 +50,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              className="hover:text-[var(--text-hover)] transition"
+              className="hover:text-[var(--text-hover)] transition text-nowrap"
               to="/about"
             >
               About us
@@ -60,7 +60,7 @@ function Navbar() {
 
         <button
           onClick={() => navigate("/contact")}
-          className="inline-flex items-center gap-2 bg-[var(--secondarygreen)] hover:bg-[var(--hovergreen)] text-white font-semibold px-6 py-3.5 rounded-xl transition-colors text-sm"
+          className="inline-flex items-center gap-2 bg-[var(--secondarygreen)] hover:bg-[var(--hovergreen)] text-white font-semibold px-6 py-3.5 rounded-xl transition-colors text-sm text-nowrap"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           Contact us

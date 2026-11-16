@@ -1,8 +1,19 @@
 import { useNavigate } from "react-router-dom";
 
-import heroImage from "../assets/lawnexample.jpg";
-import beforeImage from "../assets/before.jpg";
-import afterImage from "../assets/after.jpg";
+import heroImage from "../assets/198A0349.jpeg";
+
+import beforeImage1 from "../assets/before_steps.jpg";
+import afterImage1 from "../assets/after_steps.jpg";
+
+import beforeImage2 from "../assets/before_path_stone.jpg";
+import afterImage2 from "../assets/after_path_stone.jpg";
+
+import beforeImage3 from "../assets/before_mulch.jpg";
+import afterImage3 from "../assets/after_mulch.jpg";
+
+import beforeImage4 from "../assets/before_house_side.jpg";
+import afterImage4 from "../assets/after_house_side.jpg";
+
 import {
   Phone,
   Mail,
@@ -22,14 +33,20 @@ import {
 
 const GALLERY_PAIRS = [
   {
-    before: beforeImage,
-    after: afterImage,
-    /*label: "Overgrown Backyard → Private Garden Retreat",*/
+    before: beforeImage1,
+    after: afterImage1,
   },
   {
-    before: beforeImage,
-    after: afterImage,
-    /*label: "Patchy Front Lawn → Lush Curb Appeal",*/
+    before: beforeImage2,
+    after: afterImage2,
+  },
+  {
+    before: beforeImage3,
+    after: afterImage3,
+  },
+  {
+    before: beforeImage4,
+    after: afterImage4,
   },
 ];
 
@@ -38,7 +55,7 @@ function Home() {
 
   return (
   <>
-<section className="relative w-full min-h-[88vh] flex items-center overflow-hidden bg-green-950">
+<section className="relative w-full min-h-[80vh] flex items-center overflow-hidden bg-green-950">
       <img
         src={heroImage}
         alt="Lawn"
@@ -53,14 +70,14 @@ function Home() {
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6"
             style={{ fontFamily: "'var(--heading)', serif", fontOpticalSizing: "auto" }}
           >
-            Sustainable Local 
-            Care for&nbsp;Yards
+            Evan's Lawn, Garden, and More
           </h1>
           <p
             className="text-stone-300 text-lg sm:text-xl mb-9 leading-relaxed max-w-lg"
             style={{ fontFamily: "'var(--sans)', sans-serif" }}
           >
-            Available to work on outdoor spaces across the community, from weekly trims to yard makeovers.
+            Sustainable Local Property Care that is available for outdoor spaces across the community.
+
           </p>
           <div className="flex flex-wrap gap-3">
             <button

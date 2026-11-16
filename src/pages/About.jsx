@@ -45,13 +45,10 @@ function About() {
               Our Roots
             </h2>
             <p className="text-stone-600 dark:text-stone-400 leading-relaxed mb-4 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus. Etiam in libero feugiat, eleifend justo a, facilisis elit. Praesent elementum orci ut pretium mollis. Praesent semper et quam nec dignissim. Duis lacinia pellentesque turpis ut egestas. Donec id vehicula arcu, at interdum lorem. Praesent quis metus pretium leo porta tincidunt. 
+                We're a locally owned landscaping business proud to serve the Bellingham community. 
             </p>
             <p className="text-stone-600 dark:text-stone-400 leading-relaxed mb-4 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus. 
-            </p>
-            <p className="text-stone-600 dark:text-stone-400 leading-relaxed text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus. Etiam in libero feugiat, eleifend justo a, facilisis elit. 
+              We believe in doing good work, treating our customers right, and taking care of the environment around us. From using sustainable materials whenever possible to providing reliable, thoughtful service, our goal is simple: to help our neighbors keep their properties looking great while caring for the place we all call home.            
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden bg-green-100 dark:bg-green-950 aspect-square shadow-lg">
