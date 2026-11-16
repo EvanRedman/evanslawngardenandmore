@@ -1,7 +1,6 @@
 import maintananceImage from "../assets/lawn.jpg";
 import powerWash from "../assets/powerwash.jpg";
 import haulingImage from "../assets/haul.jpg";
-import makeoverImage from "../assets/makeover.jpg";
 import fallImage from "../assets/seasonal.jpg";
 
 import { Link } from "react-router-dom";
