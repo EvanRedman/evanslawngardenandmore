@@ -16,27 +16,27 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  return (
-    <>
-      <Navbar />
+    return (
+        <>
+            <Navbar />
 
-      <hr />
+            <hr />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/lawncare" element={<ServiceLawn />} />
-        <Route path="/services/home" element={<ServiceHome />} />
-        <Route path="/services/seasonal" element={<ServiceSeasonal />} />
-        <Route path="/services/haul" element={<ServiceHaul />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/reviews" element={<Reviews />} />
-      </Routes>
-      
-      <Footer />
-    </>
-  )
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/services/lawncare" element={<ServiceLawn />} />
+                <Route path="/services/home" element={<ServiceHome />} />
+                <Route path="/services/seasonal" element={<ServiceSeasonal />} />
+                <Route path="/services/haul" element={<ServiceHaul />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/reviews" element={<Reviews />} />
+            </Routes>
+
+            <Footer />
+        </>
+    )
 }
 
 export default App
