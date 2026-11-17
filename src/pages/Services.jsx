@@ -37,7 +37,7 @@ function Services() {
             icon: Leaf,
             title: "Seasonal Cleanups",
             summary:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus.",
+                "Helping you stay on top of leaves and other seasonal cleanup so your yard is ready for whatever the Pacific Northwest weather brings.",
             img: fallImage,
             alt: "Landscaper hauling yard debris in a wheelbarrow during a yard makeover",
             link: "/services/seasonal",
@@ -46,16 +46,16 @@ function Services() {
             icon: PaintRoller,
             title: "Wall, Windows, and Roof",
             summary:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus.",
+                "Exterior cleaning for walls, windows, roofs, and walkways to keep your property looking fresh and well-maintained year-round.",
             img: powerWash,
-            alt: "Manicured lawn with tidy flower beds and mature trees",
+            alt: "Pressure washing, painting, ",
             link: "/services/home",
         },
         {
             icon: Stone,
             title: "Hauling and Removal",
             summary:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur viverra risus in maximus.",
+                "Hauling away yard waste, branches, old landscaping materials, and other unwanted debris to help clear up your outdoor space without the hassle.",
             img: haulingImage,
             alt: "Manicured lawn with tidy flower beds and mature trees",
             link: "/services/haul",

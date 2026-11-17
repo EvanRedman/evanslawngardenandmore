@@ -4,7 +4,6 @@ import {
     ArrowRight,
     CheckCircle2,
     AlertCircle,
-    Leaf,
     Mail,
     MessageSquare,
     User,
@@ -14,6 +13,7 @@ const initialForm = {
     name: "",
     email: "",
     question: "",
+    website: "",
 };
 
 export default function ContactForm() {
@@ -36,29 +36,61 @@ export default function ContactForm() {
         setStatusType("");
 
         try {
-            const response = await fetch(
-                "/.netlify/functions/send-question",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(form),
-                }
-            );
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(form),
+            });
 
-            const data = await response.json();
+            // Safely read response, even when empty
+            const rawResponse = await response.text();
+
+            let data = {};
+
+            if (rawResponse) {
+                try {
+                    data = JSON.parse(rawResponse);
+                } catch {
+                    throw new Error(
+                        `Unexpected server response (HTTP ${response.status}).`
+                    );
+                }
+            }
+
+            if (response.status === 429) {
+                throw new Error(
+                    "Too many requests. Please try again in a minute."
+                );
+            }
 
             if (!response.ok) {
-                throw new Error(data.message || "Failed to send message.");
+                throw new Error(
+                    data.error ||
+                    data.message ||
+                    `Failed to send message (HTTP ${response.status}).`
+                );
+            }
+
+            if (data.success !== true) {
+                throw new Error(
+                    "The server did not confirm your message was sent."
+                );
             }
 
             setStatus(data.message || "Your message was sent!");
             setStatusType("success");
             setForm(initialForm);
+
         } catch (error) {
-            setStatus(error.message || "Something went wrong.");
+            console.error("Contact form error:", error);
+
+            setStatus(
+                error.message || "Something went wrong. Please try again."
+            );
             setStatusType("error");
+
         } finally {
             setLoading(false);
         }
@@ -112,6 +144,31 @@ export default function ContactForm() {
                         <div className="p-6 sm:p-10">
                             <form onSubmit={handleSubmit} className="space-y-6">
 
+                                {/* Spam honeypot */}
+                                <div
+                                    aria-hidden="true"
+                                    style={{
+                                        position: "absolute",
+                                        left: "-9999px",
+                                        width: "1px",
+                                        height: "1px",
+                                        overflow: "hidden",
+                                    }}
+                                >
+                                    <label htmlFor="website">
+                                        Leave this field empty
+                                    </label>
+                                    <input
+                                        id="website"
+                                        type="text"
+                                        name="website"
+                                        value={form.website}
+                                        onChange={handleChange}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+                                </div>
+
                                 {/* Name and Email */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
@@ -125,7 +182,7 @@ export default function ContactForm() {
                                             name="name"
                                             value={form.name}
                                             onChange={handleChange}
-                                            placeholder="John Smith"
+                                            placeholder="Enter your name here"
                                             autoComplete="name"
                                             className={inputClasses}
                                             maxLength={100}
@@ -144,9 +201,10 @@ export default function ContactForm() {
                                             name="email"
                                             value={form.email}
                                             onChange={handleChange}
-                                            placeholder="john@example.com"
+                                            placeholder="Enter your email here"
                                             autoComplete="email"
                                             className={inputClasses}
+                                            maxLength={254}
                                             required
                                         />
                                     </div>
@@ -163,7 +221,7 @@ export default function ContactForm() {
                                         name="question"
                                         value={form.question}
                                         onChange={handleChange}
-                                        placeholder="Tell us a little about your yard, the services you're interested in, or any questions you have..."
+                                        placeholder="Write us about your yard, the services you're interested in, or any questions you have"
                                         rows={6}
                                         maxLength={5000}
                                         className={`${inputClasses} resize-y`}
@@ -177,8 +235,8 @@ export default function ContactForm() {
                                         role="status"
                                         aria-live="polite"
                                         className={`flex items-start gap-3 rounded-xl p-4 text-sm ${statusType === "success"
-                                                ? "bg-green-50 text-green-800 dark:bg-green-950/60 dark:text-green-300"
-                                                : "bg-red-50 text-red-700 dark:bg-red-950/40 dark:text-red-300"
+                                            ? "bg-green-50 text-green-800 dark:bg-green-950/60 dark:text-green-300"
+                                            : "bg-red-50 text-red-700 dark:bg-red-950/40 dark:text-red-300"
                                             }`}
                                     >
                                         {statusType === "success" ? (
@@ -195,13 +253,13 @@ export default function ContactForm() {
                                     type="submit"
                                     disabled={loading}
                                     className="w-full inline-flex items-center justify-center gap-2
-                    bg-[var(--secondarygreen)] hover:bg-green-600
-                    disabled:opacity-60 disabled:cursor-not-allowed
-                    text-white font-semibold px-6 py-4 rounded-xl
-                    transition-all duration-200
-                    hover:shadow-lg hover:shadow-green-900/15
-                    focus-visible:outline-none focus-visible:ring-2
-                    focus-visible:ring-green-500 focus-visible:ring-offset-2"
+                                                bg-[var(--secondarygreen)] hover:bg-green-600
+                                                disabled:opacity-60 disabled:cursor-not-allowed
+                                                text-white font-semibold px-6 py-4 rounded-xl
+                                                transition-all duration-200
+                                                hover:shadow-lg hover:shadow-green-900/15
+                                                focus-visible:outline-none focus-visible:ring-2
+                                                focus-visible:ring-green-500 focus-visible:ring-offset-2"
                                 >
                                     {loading ? (
                                         "Sending Your Message..."
@@ -212,11 +270,6 @@ export default function ContactForm() {
                                         </>
                                     )}
                                 </button>
-
-                                <p className="text-center text-xs text-stone-400 dark:text-stone-500">
-                                    We'll send a confirmation to your email address.
-                                </p>
-
                             </form>
                         </div>
                     </div>

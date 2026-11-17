@@ -42,14 +42,6 @@ function Navbar() {
                     </li>
                     <li>
                         <Link
-                            className="hover:text-[var(--text-hover)] transition"
-                            to="/reviews"
-                        >
-                            Reviews
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
                             className="hover:text-[var(--text-hover)] transition text-nowrap"
                             to="/about"
                         >

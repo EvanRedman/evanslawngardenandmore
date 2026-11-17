@@ -8,7 +8,6 @@ import ServiceHome from './pages/Services/HomeCleaning'
 import ServiceSeasonal from './pages/Services/SeasonalCare'
 import ServiceHaul from './pages/Services/Hauling'
 import Contact from './pages/Contact'
-import Reviews from './pages/Reviews'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -31,7 +30,6 @@ function App() {
                 <Route path="/services/seasonal" element={<ServiceSeasonal />} />
                 <Route path="/services/haul" element={<ServiceHaul />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/reviews" element={<Reviews />} />
             </Routes>
 
             <Footer />

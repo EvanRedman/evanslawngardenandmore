@@ -1,20 +1,26 @@
 import heroImage from "../assets/glacier.jpg";
-import aboutUs from "../assets/evan.png";
+import aboutUs from "../assets/evan.jpg";
+
+import {
+    Sprout,
+    HeartHandshake,
+    MapPin,
+} from "lucide-react";
 
 function About() {
     const values = [
         {
-            emoji: "🌱",
+            icon: Sprout,
             title: "Sustainability",
             desc: "We use eco-friendly materials and methods when we can to minimize our environmental footprint.",
         },
         {
-            emoji: "🤝",
+            icon: HeartHandshake,
             title: "Reliability",
             desc: "We show up when we say we will, every single time.",
         },
         {
-            emoji: "📍",
+            icon: MapPin,
             title: "Local",
             desc: "We are based right here in Bellingham, Washington.",
         },
@@ -70,12 +76,14 @@ function About() {
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        {values.map(({ emoji, title, desc }) => (
+                        {values.map(({ icon: Icon, title, desc }) => (
                             <div
                                 key={title}
                                 className="bg-white dark:bg-[#162010] rounded-2xl p-7 border border-stone-200 dark:border-green-950 text-center"
                             >
-                                <div className="text-4xl mb-4">{emoji}</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center">
+                                    <Icon className="w-7 h-7 text-green-800 dark:text-green-400" />
+                                </div>
                                 <h3
                                     className="font-bold text-stone-900 dark:text-stone-50 text-xl mb-2"
                                     style={{ fontFamily: "'Fraunces', serif" }}
