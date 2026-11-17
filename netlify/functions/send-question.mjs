@@ -1,7 +1,7 @@
 
 import { Resend } from "resend";
 
-const BUSINESS_EMAIL = "";
+const BUSINESS_EMAIL = "evanslawnandgardens@gmail.com";
 const FROM_EMAIL = "onboarding@resend.dev";
 
 // Escape user input before inserting it into HTML

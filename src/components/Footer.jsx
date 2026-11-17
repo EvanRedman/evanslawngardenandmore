@@ -29,11 +29,11 @@ function Footer() {
                     </a>
 
                     <a
-                        href="mailto:your-email@example.com"
+                        href="mailto:evanslawnandgardens@gmail.com"
                         className={linkClass}
                     >
                         <Mail size={19} />
-                        <span>Email us</span>
+                        <span>evanslawnandgardens@gmail.com</span>
                     </a>
                 </div>
 
