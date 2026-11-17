@@ -44,7 +44,7 @@ function Services() {
         },
         {
             icon: PaintRoller,
-            title: "Wall, Windows, and Roof",
+            title: "Walls, Windows, and Roof",
             summary:
                 "Exterior cleaning for walls, windows, roofs, and walkways to keep your property looking fresh and well-maintained year-round.",
             img: powerWash,
@@ -64,7 +64,7 @@ function Services() {
     ];
 
     return (
-        <section className="py-20 sm:py-24 bg-[#f8f5f0] dark:bg-[#0f1a14]">
+        <section className="py-20 sm:py-24 bg-[#D1DBC8] dark:bg-[#0f1a14]">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="mb-14 text-center">
                     <h2 className="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-50 mt-2">
@@ -77,7 +77,7 @@ function Services() {
                         <Link to={link} >
                             <div
                                 key={title}
-                                className="group bg-white dark:bg-[#162010] rounded-2xl overflow-hidden border border-stone-200 dark:border-green-950 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                                className="group bg-white dark:bg-[#162010] rounded-2xl overflow-hidden border-4 border-white dark:border-green-950 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                             >
                                 <div className="relative h-48 bg-green-100 dark:bg-green-950 overflow-hidden">
                                     <img

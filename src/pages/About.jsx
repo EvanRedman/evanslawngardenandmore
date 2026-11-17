@@ -12,17 +12,22 @@ function About() {
         {
             icon: Sprout,
             title: "Sustainability",
-            desc: "We use eco-friendly materials and methods when we can to minimize our environmental footprint.",
+            desc: "Commited to sustainable landscaping through electric equipment when possible, reduced chemical use, and native plant selections that support local ecosystems.",
         },
         {
             icon: HeartHandshake,
             title: "Reliability",
-            desc: "We show up when we say we will, every single time.",
+            desc: "Dependable service, clear communication, and a commitment to following through on every job.",
+        },
+        {
+            icon: MapPin,
+            title: "Personal",
+            desc: "As a small, owner-operated business, I believe in keeping things personal. You'll always have direct communication with the owner, attentive service, and someone who genuinely listens to your needs.",
         },
         {
             icon: MapPin,
             title: "Local",
-            desc: "We are based right here in Bellingham, Washington.",
+            desc: "Founded by a WWU alumn. We are based right here in Bellingham, Washington.",
         },
     ];
 
@@ -75,7 +80,7 @@ function About() {
                             Our Values
                         </h2>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
                         {values.map(({ icon: Icon, title, desc }) => (
                             <div
                                 key={title}

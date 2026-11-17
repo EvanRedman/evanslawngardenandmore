@@ -18,7 +18,7 @@ const SERVICES = [
     },
     {
         icon: Sprout,
-        title: "Spring Cleanups",
+        title: "Spring Tidy",
         description:
             "Clear away winter debris, refresh garden beds, and get your landscape ready for the growing season.",
     },

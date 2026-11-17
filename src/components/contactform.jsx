@@ -124,7 +124,7 @@ export default function ContactForm() {
                         Let's Get in Touch About
                         <br />
                         <span className="text-[var(--secondarygreen)] dark:text-green-400">
-                            Your Yard.
+                            Your Property.
                         </span>
                     </h1>
 
@@ -221,7 +221,7 @@ export default function ContactForm() {
                                         name="question"
                                         value={form.question}
                                         onChange={handleChange}
-                                        placeholder="Write us about your yard, the services you're interested in, or any questions you have"
+                                        placeholder="Write us about your yard, the services you're interested in, or any questions you have. Please be as descriptive a possible."
                                         rows={6}
                                         maxLength={5000}
                                         className={`${inputClasses} resize-y`}
