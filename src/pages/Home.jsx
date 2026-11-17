@@ -89,7 +89,7 @@ function Home() {
                                 fontFamily: "'var(--sans)', sans-serif",
                             }}
                         >
-                            Sustainable Local Property Care that is available
+                            Sustainable and Local Property Care
                             for outdoor spaces across the community.
                         </p>
 
